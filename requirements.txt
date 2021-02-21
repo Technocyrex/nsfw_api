@@ -4,4 +4,4 @@ Jinja2
 Werkzeug
 gevent
 numpy 
-git+https://github.com/BVLC/caffe
+pycaffe
