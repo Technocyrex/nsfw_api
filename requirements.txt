@@ -4,4 +4,4 @@ Jinja2
 Werkzeug
 gevent
 numpy 
-caffe
+Caffe
