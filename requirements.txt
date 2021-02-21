@@ -3,3 +3,5 @@ Flask
 Jinja2
 Werkzeug
 gevent
+pip install numpy 
+pip install -r /path/to/caffe/python/requirements.txt
