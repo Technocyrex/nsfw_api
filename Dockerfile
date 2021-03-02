@@ -48,9 +48,6 @@ ENV PYTHONPATH /opt/open_nsfw:$PYTHONPATH
 ENV PATH /opt/open_nsfw:$PATH
 
 
-# Build and install app dependencies
-ADD requirements.txt requirements.txt
-
 # Install dependencies
 RUN pip install --no-cache-dir -q -r requirements.txt
 RUN pip install --ignore-installed pyOpenSSL --upgrade
