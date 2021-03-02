@@ -49,10 +49,10 @@ ENV PATH /opt/open_nsfw:$PATH
 
 
 # Build and install app dependencies
-ADD /tmp/requirements.txt /tmp/requirements.txt
+ADD requirements.txt requirements.txt
 
 # Install dependencies
-RUN pip install --no-cache-dir -q -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -q -r requirements.txt
 RUN pip install --ignore-installed pyOpenSSL --upgrade
 
 # Add our code
