@@ -50,7 +50,8 @@ ADD ./web /opt/web/
 WORKDIR /opt/web
 
 # Install dependencies
-RUN git clone https://github.com/Technocyrex/nsfw_api.git && cd nsfw_api
+RUN git clone https://github.com/Technocyrex/nsfw_api.git
+RUN cd nsfw_api
 RUN pip install --no-cache-dir -q -r requirements.txt
 RUN pip install --ignore-installed pyOpenSSL --upgrade
 WORKDIR /nsfw_api
