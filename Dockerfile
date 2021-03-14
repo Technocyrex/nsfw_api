@@ -46,15 +46,14 @@ RUN echo "$CAFFE_ROOT/build/lib" >> /etc/ld.so.conf.d/caffe.conf && ldconfig
 RUN cd /opt && git clone https://github.com/yahoo/open_nsfw.git
 ENV PYTHONPATH /opt/open_nsfw:$PYTHONPATH
 ENV PATH /opt/open_nsfw:$PATH
-
-
-# Install dependencies
-RUN pip install --no-cache-dir -q -r requirements.txt
-RUN pip install --ignore-installed pyOpenSSL --upgrade
-
-# Add our code
 ADD ./web /opt/web/
 WORKDIR /opt/web
+
+# Install dependencies
+RUN git clone https://github.com/Technocyrex/nsfw_api.git && cd nsfw_api
+RUN pip install --no-cache-dir -q -r requirements.txt
+RUN pip install --ignore-installed pyOpenSSL --upgrade
+WORKDIR /nsfw_api
 
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku
