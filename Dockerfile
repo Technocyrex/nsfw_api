@@ -1,4 +1,4 @@
-FROM heroku/heroku:20
+FROM heroku/heroku:16
 
 # Python and Caffe native dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
